@@ -1,0 +1,5 @@
+
+int main(){
+    int c[2] = {1,2,3};
+    const int d[2] = {1,2,3};
+}

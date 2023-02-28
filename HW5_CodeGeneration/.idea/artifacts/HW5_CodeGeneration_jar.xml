@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="HW5_CodeGeneration:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/HW5_CodeGeneration_jar</output-path>
+    <root id="archive" name="HW5_CodeGeneration.jar">
+      <element id="module-output" name="HW5_CodeGeneration" />
+    </root>
+  </artifact>
+</component>

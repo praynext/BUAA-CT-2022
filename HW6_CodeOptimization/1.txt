@@ -1,0 +1,23 @@
+main:
+
+PRINT "20376156\n"
+PRINT "hhh\n"
+SAVE $x@1 <- 11
+Label6:
+$8 <- $x@1 GE 0
+BRANCH Label7: IF $8 EQ 0
+Label8:
+$x@1 <- -2 ADD $x@1
+$11 <- -2 ADD $x@1
+$12 <- $11 EQ 1
+BRANCH Label6: IF $12 NE 0
+$14 <- $x@1 EQ 3
+BRANCH Label7: IF $14 NE 0
+$x@1 <- -1 ADD $x@1
+$17 <- -1 ADD $x@1
+$18 <- $17 GE 0
+BRANCH Label8: IF $18 NE 0
+Label7:
+PUSH $x@1
+PRINT "%d\n"
+EXIT

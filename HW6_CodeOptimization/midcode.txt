@@ -1,0 +1,12 @@
+main:
+
+LOCAL VAR $i@1 
+CALL GETINT
+SAVE $i@1 <- $?
+LOCAL VAR $j@1 
+CALL GETINT
+SAVE $j@1 <- $?
+$2 <- $i@1 BITAND $j@1
+PUSH $2
+PRINT "%d"
+EXIT

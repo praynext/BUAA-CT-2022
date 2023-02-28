@@ -1,0 +1,60 @@
+int global_var1 = +-+114514;
+int global_var2 = -+-233;
+int sum(int var1, int var2){
+	return var1+var2;
+}
+int main(){
+	int var;
+	int jjjjj = 333;
+	int hjkdahfjk = -+jjjjj;
+	int jhhjhj, hhih=9,hkhk;
+	printf("20374231");
+    if(global_var1>=0){
+	    printf("%d", global_var1);
+    }else{
+        printf("%dhfdkas%d", global_var1, global_var2);
+    }
+	if(!1);
+	if(!2);
+    if(333>78668){
+	    printf("%d", global_var2);
+    }else if(1){
+        printf("fhajsgfdjagf");
+    }
+    if(global_var1<=78868){
+	    printf("%d", global_var1%global_var2);
+    }else if(2){
+        printf("fhjkadsdhfkas");
+    }else{
+	int kkkkk;
+}
+    if(global_var2<676886){
+        printf("%d", global_var1-global_var2);
+    }else if(!0){
+        printf("fdahjksfhdjksahfjkhg");
+    }
+    const int temp = 4321;
+    if(1==2){
+        global_var1 = temp;
+    }
+    if(1!=2){
+        global_var2 = temp;
+    }
+	printf("%d", global_var1*global_var2);
+	printf("%d", global_var1/global_var2);
+	printf("%d", sum(global_var1, global_var2));
+    var = 0;
+	while(var<100){
+		global_var2= sum(global_var2, 1);
+        var = var + 1;
+	}
+	printf("%d", global_var2);
+	if(global_var2==333){
+		printf("OK!");
+	}else{
+        if(1==1){
+            printf("hhh");
+        }
+    }
+	return 0;
+}

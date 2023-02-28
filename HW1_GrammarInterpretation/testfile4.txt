@@ -1,0 +1,35 @@
+int random(int var1, int var2){
+	return var1+var2/var1-var2*var1;
+}
+int main(){
+	int global_var1 = 114514;
+int global_var2 = 233;
+	int var;
+	var = getint();
+	printf("20374231");
+	printf("%d", var);
+	var = 7878;
+	var = 77777;
+	var =var*var;
+	var = var + var;
+	printf("%d", global_var1);
+	printf("%d", global_var2);
+	printf("%d", global_var1+global_var2);
+	printf("%d", global_var1-global_var2);
+	printf("%d", global_var1*global_var2);
+	printf("%d\n", global_var1/global_var2);
+	var = 0;
+	while(var<100){
+		if(var == 50){
+			break;
+		}
+		var = var + 1;
+	}
+	if(global_var2>0){
+		printf("OK!");
+	}else{
+		printf("notOK!");
+	}
+	printf("finish!");
+	return 0;
+}

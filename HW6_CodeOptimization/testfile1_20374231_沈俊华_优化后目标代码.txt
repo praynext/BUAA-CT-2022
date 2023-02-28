@@ -1,0 +1,283 @@
+.data
+a: .word 0:1
+b: .word 0:1
+c: .word 0:1
+d: .word 0:1
+e: .word 0:1
+i: .word 0
+string0: .asciiz "main_i = "
+string1: .asciiz "\n"
+string2: .asciiz "\n"
+string3: .asciiz "glo_i = "
+string4: .asciiz "\n"
+string5: .asciiz "sum = "
+string6: .asciiz "\n"
+.text
+main:
+addiu $sp, $sp, -16
+li $s0, 0
+li $v0, 5
+syscall
+addiu $s7, $v0, 0
+li $v0, 5
+syscall
+addiu $gp, $v0, 0
+li $v0, 5
+syscall
+addiu $k0, $v0, 0
+li $v0, 5
+syscall
+addiu $k1, $v0, 0
+li $v0, 5
+syscall
+addiu $a1, $v0, 0
+li $v0, 5
+syscall
+addiu $s0, $v0, 0
+sw $s0, -4($sp)
+la $a0, string0
+li $v0, 4
+syscall
+lw $a0, -4($sp)
+li $v0, 1
+syscall
+la $a0, string1
+li $v0, 4
+syscall
+sw $a1, e
+sw $s7, a
+sw $k1, d
+sw $k0, c
+sw $gp, b
+sw $ra, 0($sp)
+jal func3
+lw $ra, 0($sp)
+addiu $s0, $v0, 0
+sw $s0, -4($sp)
+lw $a0, -4($sp)
+li $v0, 1
+syscall
+la $a0, string2
+li $v0, 4
+syscall
+li $v0, 10
+syscall
+func0:
+addiu $sp, $sp, -40
+lw $s0, 36($sp)
+lw $s1, 32($sp)
+addu $s0, $s0, $s1
+li $fp, -2147483521
+and $s0, $fp, $s0
+bgez $s0, Temp0
+addiu $s0, $s0, -1
+li $fp, -128
+or $s0, $s0, $fp
+addiu $s0, $s0, 1
+Temp0:
+addiu $v0, $s0, 0
+addiu $sp, $sp, 40
+jr $ra
+func1:
+addiu $sp, $sp, -20
+lw $s7, i
+addiu $s0, $s7, 0
+li $fp, 1
+addu $s0, $fp, $s0
+addiu $s7, $s0, 0
+addiu $s0, $s7, 0
+sw $s7, i
+addiu $v0, $s0, 0
+addiu $sp, $sp, 20
+jr $ra
+func2:
+addiu $sp, $sp, -28
+lw $s0, 24($sp)
+lw $s1, 20($sp)
+div $s0, $s1
+mfhi $s0
+li $fp, 0
+bne $s0, $fp, Label1
+li $v0, 1
+addiu $sp, $sp, 28
+jr $ra
+Label1:
+li $v0, 0
+addiu $sp, $sp, 28
+jr $ra
+func3:
+addiu $sp, $sp, -356
+lw $s7, i
+addiu $s0, $s7, 0
+sw $s0, -4($sp)
+la $a0, string3
+li $v0, 4
+syscall
+lw $a0, -4($sp)
+li $v0, 1
+syscall
+la $a0, string4
+li $v0, 4
+syscall
+addiu $s1, $s7, 0
+li $fp, 10000
+slt $s1, $s1, $fp
+sw $s7, i
+sw $gp, 340($sp)
+sw $k0, 336($sp)
+sw $k1, 332($sp)
+beq $s1, $0, Label3
+Label4:
+lw $s7, a
+addiu $s0, $s7, 0
+sll $s1, $s0, 7
+addiu $s0, $s7, 0
+mult $s1, $s0
+mflo $s1
+addiu $s0, $s7, 0
+div $s1, $s0
+mflo $s0
+bgez $s0, Temp1
+addiu $s0, $s0, 31
+Temp1:
+sra $s1, $s0, 5
+lw $gp, b
+addiu $s0, $gp, 0
+sw $s0, -4($sp)
+sw $s1, -8($sp)
+sw $s7, a
+sw $gp, b
+sw $ra, 0($sp)
+jal func0
+lw $ra, 0($sp)
+addiu $s0, $v0, 0
+addiu $s7, $s0, 0
+lw $gp, a
+addiu $s0, $gp, 0
+sll $s1, $s0, 2
+addiu $s0, $s7, 0
+addu $s1, $s1, $s0
+lw $k0, c
+addiu $s0, $k0, 0
+addu $s2, $s1, $s0
+addiu $s5, $s2, 0
+addiu $s0, $gp, 0
+sll $s1, $s0, 2
+addiu $s0, $s7, 0
+addu $s1, $s1, $s0
+addiu $s0, $k0, 0
+addu $s1, $s1, $s0
+lw $k1, d
+addiu $s0, $k1, 0
+addu $s1, $s1, $s0
+addiu $s0, $s1, 0
+addiu $s3, $gp, 0
+sll $s4, $s3, 2
+addiu $s3, $s7, 0
+addu $s4, $s4, $s3
+addiu $s3, $k0, 0
+addu $s4, $s4, $s3
+addiu $s3, $k1, 0
+addu $s4, $s4, $s3
+lw $a1, e
+addiu $s3, $a1, 0
+addu $s6, $s4, $s3
+addiu $a2, $s6, 0
+addiu $s3, $gp, 0
+sll $s4, $s3, 2
+addiu $s3, $s7, 0
+addu $s4, $s4, $s3
+addiu $s3, $k0, 0
+addu $s4, $s4, $s3
+addiu $s3, $k1, 0
+addu $s4, $s4, $s3
+addiu $s3, $a1, 0
+addu $a3, $s4, $s3
+addiu $v1, $a3, 0
+addiu $s3, $gp, 0
+sll $s4, $s3, 2
+addiu $s3, $s7, 0
+addu $s4, $s4, $s3
+addiu $s3, $k0, 0
+addu $s4, $s4, $s3
+addiu $s3, $k1, 0
+addu $s4, $s4, $s3
+addiu $s3, $a1, 0
+addu $s4, $s4, $s3
+addiu $t0, $s4, 0
+lw $t1, i
+addiu $s3, $t1, 0
+sw $s3, -4($sp)
+li $fp, 1000
+sw $fp, -8($sp)
+sw $t1, i
+sw $s0, 344($sp)
+sw $s7, b
+sw $a2, 340($sp)
+sw $k1, d
+sw $v1, 336($sp)
+sw $gp, a
+sw $s2, 252($sp)
+sw $t0, 332($sp)
+sw $s6, 180($sp)
+sw $a3, 140($sp)
+sw $a1, e
+sw $s1, 220($sp)
+sw $s5, 348($sp)
+sw $s4, 100($sp)
+sw $k0, c
+sw $ra, 0($sp)
+jal func2
+lw $ra, 0($sp)
+lw $s0, 344($sp)
+lw $s2, 252($sp)
+lw $s6, 180($sp)
+lw $s1, 220($sp)
+lw $s5, 348($sp)
+lw $s4, 100($sp)
+addiu $s3, $v0, 0
+beq $s3, $0, Label7
+addu $s1, $s2, $s1
+addu $s1, $s1, $s6
+lw $s7, 140($sp)
+addu $s1, $s1, $s7
+addu $s1, $s1, $s4
+sw $s1, -4($sp)
+la $a0, string5
+li $v0, 4
+syscall
+lw $a0, -4($sp)
+li $v0, 1
+syscall
+la $a0, string6
+li $v0, 4
+syscall
+Label7:
+lw $s7, i
+addiu $s1, $s7, 0
+sw $s1, -4($sp)
+sw $s0, 344($sp)
+sw $s7, i
+sw $s5, 348($sp)
+sw $ra, 0($sp)
+jal func1
+lw $ra, 0($sp)
+lw $s0, 344($sp)
+lw $s5, 348($sp)
+lw $s7, i
+addiu $s1, $s7, 0
+li $fp, 10000
+slt $s1, $s1, $fp
+sw $s7, i
+bne $s1, $0, Label4
+Label3:
+addu $s0, $s5, $s0
+lw $s7, 340($sp)
+addu $s0, $s0, $s7
+lw $gp, 336($sp)
+addu $s0, $s0, $gp
+lw $k0, 332($sp)
+addu $s0, $s0, $k0
+addiu $v0, $s0, 0
+addiu $sp, $sp, 356
+jr $ra

@@ -1,0 +1,46 @@
+.data
+.text
+addiu $sp, $sp, -4
+# CALL main
+sw $ra, 0($sp)
+jal main
+lw $ra, 0($sp)
+# EXIT
+li $v0, 10
+syscall
+# main:
+main:
+addiu $sp, $sp, -24
+# LOCAL VAR $i@1 
+# CALL GETINT
+li $v0, 5
+syscall
+# SAVE $i@1 <- $?
+addiu $t0, $v0, 0
+# LOCAL VAR $j@1 
+# CALL GETINT
+li $v0, 5
+syscall
+# SAVE $j@1 <- $?
+addiu $t1, $v0, 0
+# TEMP $0 <- $i@1
+addiu $t2, $t0, 0
+# TEMP $1 <- $j@1
+addiu $t3, $t1, 0
+# $2 <- $0 BITAND $1
+and $t4, $t2, $t3
+# PUSH $2
+sw $t4, -4($sp)
+# PRINT "%d"
+lw $a0, -4($sp)
+li $v0, 1
+syscall
+# RETURN 0
+sw $t4, 4($sp)
+sw $t1, 16($sp)
+sw $t3, 8($sp)
+sw $t0, 20($sp)
+sw $t2, 12($sp)
+li $v0, 0
+addiu $sp, $sp, 24
+jr $ra

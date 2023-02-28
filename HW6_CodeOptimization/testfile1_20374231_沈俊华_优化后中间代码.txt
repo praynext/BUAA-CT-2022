@@ -1,0 +1,153 @@
+GLOBAL VAR $a@0 
+GLOBAL VAR $b@0 
+GLOBAL VAR $c@0 
+GLOBAL VAR $d@0 
+GLOBAL VAR $e@0 
+GLOBAL VAR $i@0 0
+main:
+
+LOCAL VAR $i@8 0
+CALL GETINT
+SAVE $a@0 <- $?
+CALL GETINT
+SAVE $b@0 <- $?
+CALL GETINT
+SAVE $c@0 <- $?
+CALL GETINT
+SAVE $d@0 <- $?
+CALL GETINT
+SAVE $e@0 <- $?
+CALL GETINT
+SAVE $i@8 <- $?
+PUSH $i@8
+PRINT "main_i = %d\n"
+CALL func3
+TEMP $1 <- $?
+PUSH $1
+PRINT "%d\n"
+EXIT
+func0:
+
+PARA $a@1
+PARA $b@1
+$4 <- $a@1 ADD $b@1
+$6 <- $4 MOD 128
+RETURN $6
+func1:
+
+TEMP $7 <- $i@0
+$8 <- 1 ADD $7
+SAVE $i@0 <- $8
+TEMP $9 <- $i@0
+RETURN $9
+func2:
+
+PARA $a@3
+PARA $b@3
+$12 <- $a@3 MOD $b@3
+$13 <- $12 EQ 0
+BRANCH Label1: IF $13 EQ 0
+RETURN 1
+Label1:
+RETURN 0
+func3:
+
+TEMP $14 <- $i@0
+PUSH $14
+PRINT "glo_i = %d\n"
+LOCAL VAR $tt0@5 
+LOCAL VAR $tt1@5 
+LOCAL VAR $t2@5 
+LOCAL VAR $tt3@5 
+LOCAL VAR $tt4@5 
+TEMP $15 <- $i@0
+$16 <- $15 LT 10000
+BRANCH Label3: IF $16 EQ 0
+Label4:
+TEMP $17 <- $a@0
+$18 <- 128 MUL $17
+TEMP $19 <- $a@0
+$20 <- $18 MUL $19
+TEMP $21 <- $a@0
+$22 <- $20 DIV $21
+$23 <- $22 DIV 32
+TEMP $24 <- $b@0
+PUSH $24
+PUSH $23
+CALL func0
+TEMP $26 <- $?
+SAVE $b@0 <- $26
+TEMP $27 <- $a@0
+$28 <- 4 MUL $27
+TEMP $29 <- $b@0
+$30 <- $28 ADD $29
+TEMP $31 <- $c@0
+$32 <- $30 ADD $31
+SAVE $tt0@5 <- $32
+TEMP $33 <- $a@0
+$34 <- 4 MUL $33
+TEMP $35 <- $b@0
+$36 <- $34 ADD $35
+TEMP $37 <- $c@0
+$38 <- $36 ADD $37
+TEMP $39 <- $d@0
+$40 <- $38 ADD $39
+SAVE $tt1@5 <- $40
+TEMP $41 <- $a@0
+$42 <- 4 MUL $41
+TEMP $43 <- $b@0
+$44 <- $42 ADD $43
+TEMP $45 <- $c@0
+$46 <- $44 ADD $45
+TEMP $47 <- $d@0
+$48 <- $46 ADD $47
+TEMP $49 <- $e@0
+$50 <- $48 ADD $49
+SAVE $t2@5 <- $50
+TEMP $51 <- $a@0
+$52 <- 4 MUL $51
+TEMP $53 <- $b@0
+$54 <- $52 ADD $53
+TEMP $55 <- $c@0
+$56 <- $54 ADD $55
+TEMP $57 <- $d@0
+$58 <- $56 ADD $57
+TEMP $59 <- $e@0
+$60 <- $58 ADD $59
+SAVE $tt3@5 <- $60
+TEMP $61 <- $a@0
+$62 <- 4 MUL $61
+TEMP $63 <- $b@0
+$64 <- $62 ADD $63
+TEMP $65 <- $c@0
+$66 <- $64 ADD $65
+TEMP $67 <- $d@0
+$68 <- $66 ADD $67
+TEMP $69 <- $e@0
+$70 <- $68 ADD $69
+SAVE $tt4@5 <- $70
+TEMP $71 <- $i@0
+PUSH $71
+PUSH 1000
+CALL func2
+TEMP $72 <- $?
+BRANCH Label7: IF $72 EQ 0
+$75 <- $32 ADD $40
+$77 <- $75 ADD $50
+$79 <- $77 ADD $60
+$81 <- $79 ADD $70
+PUSH $81
+PRINT "sum = %d\n"
+Label7:
+TEMP $82 <- $i@0
+PUSH $82
+CALL func1
+TEMP $84 <- $i@0
+$85 <- $84 LT 10000
+BRANCH Label4: IF $85 NE 0
+Label3:
+$88 <- $tt0@5 ADD $tt1@5
+$90 <- $88 ADD $t2@5
+$92 <- $90 ADD $tt3@5
+$94 <- $92 ADD $tt4@5
+RETURN $94

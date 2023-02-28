@@ -1,0 +1,3 @@
+IDENFR sss
+CONSTTK const
+INTTK int
